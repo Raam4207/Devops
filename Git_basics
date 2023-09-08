@@ -1,0 +1,164 @@
+Here git commands that can help u to imrove git related activities
+
+1. Initialize a local repository
+git init <directory>
+The <directory> is optional. If you don't specify it, the current directory will be used.
+
+2. Clone a remote repository
+git clone <url> 
+
+3. Add a file to the staging area
+git add <file>
+To add all files in the current directory, use . in place of <file>.
+git add .
+
+4. Commit changes
+git commit -m "<message>"
+If you want to add all changes made to tracked files & commit
+git commit -a -m "<message>"
+
+# or
+
+git commit -am "<message>"
+
+ 5. Remove a file from the staging area
+git reset <file>
+
+6. Move or rename a file
+git mv <current path> <new path>
+
+7. Remove a file from the repository
+git rm <file>
+You can also remove it from staging area only using --cached flag
+git rm --cached <file>
+
+Basic Git Concepts
+8.Default branch name: main
+9.Default remote name: origin
+10.Current branch reference: HEAD
+11.Parent of HEAD: HEAD^ or HEAD~1
+12.Grandparent of HEAD: HEAD^^ or HEAD~2
+13.Display branches
+git branch
+Useful flags:
+
+-a: Display all branches (local & remote)
+-r: Display remote branches
+-v: Display branches with last commit
+
+14. Create a branch
+git branch <branch>
+You can create a branch and switch to it using the checkout command.
+git checkout -b <branch>
+
+15. Switch to a branch
+git checkout <branch>
+
+16. Delete a branch
+git branch -d <branch>
+You can also force delete a branch using the -D flag.
+git branch -D <branch>
+
+17. Merge a branch
+git merge <branch to merge into HEAD>
+Useful flags:
+
+--no-ff: Create a merge commit even if the merge resolves as a fast-forward
+--squash: Squash all commits from the specified branch into a single commit
+Fast forward Merge
+Fast-forward-merge
+
+Non-Fast forward Merge
+No-fast-forward-merge
+
+It is suggested to not use the --squash flag as it will squash all commits into a single commit, leading to a messy commit history.
+
+18. Rebase a branch
+Rebasing is the process of moving or combining a sequence of commits to a new base commit
+
+Rebase
+git rebase <branch to rebase from>
+
+19. Checkout a previous commit
+git checkout <commit id>
+
+20. Revert a commit
+git revert <commit id>
+
+21. Reset a commit
+git reset <commit id>
+You can also add the --hard flag to delete all changes, but use it with caution.
+git reset --hard <commit id>
+
+22. Check out the status of the repository
+git status
+
+23. Display the commit history
+git log
+
+24. Display the changes to unstaged files
+git diff
+You can also use the --staged flag to display the changes to staged files.
+git diff --staged
+
+25. Display the changes between two commits
+git diff <commit id 01> <commit id 02>
+
+26. Stash changes
+The stash allows you to temporarily store changes without committing them.
+git stash
+You can also add a message to the stash.
+git stash save "<message>"
+
+27. List stashes
+git stash list
+
+28. Apply a stash
+Applying the stash will NOT remove it from the stash list.
+git stash apply <stash id>
+If you do not specify the <stash id>, the latest stash will be applied (Valid for all similar stash commands)
+
+You can also use the format stash@{<index>} to apply a stash (Valid for all similar stash commands)
+git stash apply stash@{0}
+
+29. Remove a stash
+git stash drop <stash id>
+
+30. Remove all stashes
+git stash clear
+
+31. Apply and remove a stash
+git stash pop <stash id>
+
+32. Display the changes in a stash
+git stash show <stash id>
+
+33. Add a remote repository
+git remote add <remote name> <url>
+
+34. Display remote repositories
+git remote
+Add a -v flag to display the URLs of the remote repositories.
+git remote -v
+
+35. Remove a remote repository
+git remote remove <remote name>
+
+36 Rename a remote repository
+git remote rename <old name> <new name>
+
+37. Fetch changes from a remote repository
+git fetch <remote name>
+
+38. Fetch changes from a particular branch
+git fetch <remote name> <branch>
+
+39. Pull changes from a remote repository
+git pull <remote name> <branch>
+
+40. Push changes to a remote repository
+git push <remote name>
+
+41. Push changes to a particular branch
+git push <remote name> <branch>
+

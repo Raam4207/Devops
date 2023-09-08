@@ -1,0 +1,21 @@
+A common branching strategy used in Git is called "Gitflow." It provides a structured approach to managing code branches and releases. Here's a simplified explanation of the Gitflow branching strategy:
+
+1.Master Branch: The master branch represents the stable and production-ready code. It should only contain code that has been thoroughly tested and is ready for deployment.
+
+2.Develop Branch: The develop branch is where active development takes place. It serves as the integration branch for feature branches.
+
+3.Feature Branches: For each new feature or task, a dedicated feature branch is created from the develop branch. These branches are used for developing and testing new functionality. Once a feature is complete, it is merged back into the develop branch.
+
+4.Release Branches: When it's time to prepare a new release, a release branch is created from the develop branch. This branch is used for finalizing the release, such as bug fixes or small adjustments. Once the release is ready, it is merged into both the develop and master branches.
+
+5.Hotfix Branches: If a critical bug or issue is discovered in the production code, a hotfix branch is created from the master branch. The fix is applied in this branch and then merged back into both the develop and master branches.
+
+Here's a summary of the typical flow:
+
+New features are developed in feature branches branching off from develop.
+Once a feature is complete, it is merged back into the develop branch.
+When it's time for a release, a release branch is created from develop.
+The release branch undergoes final testing and bug fixing.
+The release branch is merged into both develop and master.
+If a critical issue is discovered in the master branch, a hotfix branch is created from master.
+The hotfix is applied and merged back into both develop and master.
